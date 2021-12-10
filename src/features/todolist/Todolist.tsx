@@ -9,7 +9,6 @@ export default function Todolist() {
 
     return (
         <div>
-            Todolist
             {todolist.map(v => {
                 return <div>{v.name}{v.done ? '完成' : '未完成'}</div>
             })}

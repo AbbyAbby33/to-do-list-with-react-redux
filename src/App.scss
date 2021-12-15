@@ -1,13 +1,15 @@
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+@import "./styles/components/button.scss";
+
+/** 大範圍的排版共用：左邊page，右邊menu + info*/
+@mixin large-layout-base {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
 }
 
 .Tdl {
   height: 100vh;
   font-size: calc(10px + 2vmin);
-  background-color: pink;
   position: relative;
   overflow: hidden;
 }
@@ -21,20 +23,22 @@
 
 .Tdl-content {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  // background-color: yellow;
-}
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  background-color: yellow;
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+  // page
+  .Tdl-page {
+    @include large-layout-base;
   }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
+
+  // menu + info
+  .Tdl-menu {
+    @include large-layout-base;
+    background-color: pink;
+    .Tdl-menu-button {
+      @include tdl-icon-button-wrap(50px);
+    }
   }
 }

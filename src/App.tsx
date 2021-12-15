@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import Todolist from './features/todolist/Todolist';
+import React, { lazy, Suspense } from 'react';
 import './App.scss';
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
+import { GoCalendar, GoListUnordered } from 'react-icons/go';
+
+// 頁面
+const CalendarStyle = lazy(() => import('./pages/CalendarStyle'));
+const ListStyle = lazy(() => import('./pages/ListStyle'));
 
 function App() {
   return (
@@ -11,7 +14,31 @@ function App() {
         <source src="/videos/sea-1.mp4" type="video/mp4" />
       </video>
       <div className="Tdl-content">
-        <Todolist />
+        {/* page */}
+        <div className="Tdl-page">
+          <Suspense fallback={<div>loading</div>}>
+            <Switch>
+              <Route path="/list-style" component={ListStyle} />              
+              <Route path="/calendar-style" component={CalendarStyle} />
+              <Redirect to="/list-style" />
+            </Switch>
+          </Suspense>
+        </div>
+
+        {/* menu + info */}
+        <div className="Tdl-menu">
+          <NavLink to="/list-style">
+            <div className="Tdl-menu-button">
+              <GoListUnordered />
+            </div>
+          </NavLink>
+          <NavLink to="/calendar-style">
+            <div className="Tdl-menu-button">
+              <GoCalendar />
+            </div>
+          </NavLink>
+        </div>
+
       </div>
     </div>
   );

@@ -1,0 +1,2 @@
+(this["webpackJsonpto-do-list-with-react-redux"]=this["webpackJsonpto-do-list-with-react-redux"]||[]).push([[4],{39:function(t,e,n){"use strict";n.r(e),n.d(e,"default",(function(){return u}));n(0);var c=n(19),r=n(1);function i(){var t=Object(c.c)((function(t){return t.todolist.value}));Object(c.b)();return Object(r.jsx)("div",{children:t.map((function(t){return Object(r.jsxs)("div",{children:[t.name,t.done?"\u5b8c\u6210":"\u672a\u5b8c\u6210"]})}))})}function u(){return Object(r.jsx)("div",{children:Object(r.jsx)(i,{})})}}}]);
+//# sourceMappingURL=4.2283bede.chunk.js.map

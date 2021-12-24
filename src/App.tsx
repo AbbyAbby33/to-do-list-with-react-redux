@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="Tdl">
       <video autoPlay muted loop className="Tdl-video">
-        <source src="to-do-list-with-react-redux/videos/sea-1.mp4" type="video/mp4" />
+        <source src="/to-do-list-with-react-redux/videos/sea-1.mp4" type="video/mp4" />
       </video>
       <div className="Tdl-content">
         {/* page */}

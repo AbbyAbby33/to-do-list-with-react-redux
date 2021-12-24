@@ -10,7 +10,7 @@ export default function Todolist() {
     return (
         <div>
             {todolist.map(v => {
-                return <div>{v.name}{v.done ? '完成' : '未完成'}</div>
+                return <div key={v.id}>{v.name}{v.done ? '完成' : '未完成'}</div>
             })}
         </div>
     )

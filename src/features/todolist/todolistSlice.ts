@@ -7,8 +7,8 @@ export interface TodolistState {
 
 const initialState: TodolistState = {
     value: [
-        {name: '買菜', done: false},
-        {name: '切水果', done: false},
+        {id: '0001', name: '買菜', done: false},
+        {id: '0002', name: '切水果', done: false},
     ],
 }
 
